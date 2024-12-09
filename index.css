@@ -74,3 +74,7 @@
 .rest-eta{
     font-size: small;
 }
+
+.top-rated-btn {
+    cursor: pointer;
+}
