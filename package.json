@@ -4,7 +4,7 @@
   "description": "React chapter 2",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node App.js"
+    "start": "npx parcel index.html"
   },
   "author": "Sharma S S",
   "license": "ISC",
