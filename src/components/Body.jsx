@@ -1,9 +1,29 @@
 import RestaurantCard from "./RestaurantCard";
-import restList from "../../utils/mockData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Body = () => {
-  const [resDetail, setResDetail] = useState(restList);
+  const [resDetail, setResDetail] = useState([]);
+
+  useEffect(() => {
+    getApiData();
+  }, []);
+
+  async function getApiData() {
+    let realRestData = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9730003&lng=77.66771&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+
+    const restJsonData = await realRestData.json();
+    // return realRestData;
+
+    setResDetail(
+      restJsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
+  }
+  if (resDetail.length == 0) {
+    return <h1>Loading.............</h1>;
+  }
   return (
     <div className="body-comp">
       <div>
@@ -14,7 +34,6 @@ const Body = () => {
               let topResList = resDetail.filter((ele, val) => {
                 return ele.info.avgRatingString > "4.5";
               });
-              console.log(topResList);
               setResDetail(topResList);
             }
           }}
