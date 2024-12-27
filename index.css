@@ -30,12 +30,13 @@
 .res-container{
     display: flex;
     flex-wrap: wrap;
+    background-color: black;
 }
 
 .res-card{
     margin: 20px;
     width : 200px;
-    background-color: bisque;
+    background-color: rgb(192, 185, 176);
     text-align: center;
     border-radius:5%;
 }
@@ -50,6 +51,7 @@
     padding: 15px ;
     margin: 15 px;
     align-items: center;
+background-color: black;
 }
 
 .res-logo{
@@ -86,7 +88,7 @@
     margin: 20px;
     width : 200px;
     height: 218px;
-    background-color: bisque;
+    background-color:  rgb(192, 185, 176);
     text-align: center;
     border-radius:5%;
 }
