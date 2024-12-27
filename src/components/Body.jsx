@@ -1,5 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [resDetail, setResDetail] = useState([]);
@@ -22,8 +23,9 @@ const Body = () => {
     );
   }
   if (resDetail.length == 0) {
-    return <h1>Loading.............</h1>;
+    return <Shimmer />;
   }
+  console.log(resDetail.length);
   return (
     <div className="body-comp">
       <div>

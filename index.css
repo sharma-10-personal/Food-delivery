@@ -38,7 +38,6 @@
     background-color: bisque;
     text-align: center;
     border-radius:5%;
-    
 }
 
 .res-card:hover{
@@ -81,4 +80,13 @@
 
 .pure-veg{
     background-color: green;
+}
+
+.res-card-shimmer{
+    margin: 20px;
+    width : 200px;
+    height: 218px;
+    background-color: bisque;
+    text-align: center;
+    border-radius:5%;
 }
