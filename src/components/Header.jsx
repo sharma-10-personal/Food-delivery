@@ -14,7 +14,6 @@ const Header = () => {
         <li>Cart</li>
         <button
           onClick={() => {
-            console.log("working-----", logInStatus);
             logInStatus === "Login"
               ? setlogInStatus("Logout")
               : setlogInStatus("Login");
