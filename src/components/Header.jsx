@@ -1,5 +1,6 @@
 import logo from "../../utils/logo.jpg";
 import { useState } from "react";
+import { Link } from "react-router";
 
 const Header = () => {
   let [logInStatus, setlogInStatus] = useState("Login");
@@ -8,11 +9,20 @@ const Header = () => {
     <div className="header">
       <img className="logoimg" src={logo} />
       <ul className="nav-items">
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact Us</li>
-        <li>Cart</li>
+        <li>
+          <a href="/about">Home</a>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact Us </Link>
+        </li>
+        <li>
+          <Link to="/cart">Cart</Link>
+        </li>
         <button
+          className="login-btn"
           onClick={() => {
             logInStatus === "Login"
               ? setlogInStatus("Logout")

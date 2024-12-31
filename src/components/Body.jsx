@@ -31,7 +31,6 @@ const Body = () => {
   if (resDetail.length == 0) {
     return <Shimmer />;
   }
-  console.log(resDetail.length);
   return (
     <div className="body-comp">
       <div className="filters">

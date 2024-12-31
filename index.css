@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-between; /* Align logo and navigation items */
     padding: 10px 20px;
-    background-color:  #e0d7ca;; /* Optional background color */
+    background-color:  #e0d7ca; /* Optional background color */
 }
 .logoimg{
     width: 150px;
@@ -127,3 +127,25 @@ background-color: black;
     display: flex;
     margin-bottom: 20px;
   }
+
+.counter{
+    background-color: white;
+}
+
+.error-cat{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-btn{
+    cursor: pointer;
+    border: none;
+    border-radius: 100px;
+    transition: background-color 0.3s ease;
+    color: purple;
+    background-color:  #e0d7ca;
+    text-decoration: underline ;
+    font-weight: 200;
+}
