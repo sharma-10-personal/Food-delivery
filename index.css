@@ -149,3 +149,41 @@ background-color: black;
     text-decoration: underline ;
     font-weight: 200;
 }
+
+.menu-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.item-details {
+    flex-grow: 1; /* Allows text to take up available space */
+    min-width: 0; /* Prevents text from forcing expansion */
+    white-space: nowrap; /* Prevents text from wrapping (optional) */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds "..." if text overflows */
+}
+
+.item-img{
+    height: 100px;
+    width: 130px;
+    border: 2px black solid;
+       
+}
+
+.menu-item{
+    display: flex;
+    gap:600px;
+    border-bottom: 2px grey solid ;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    
+}
+
+.item-img-and-btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+}
