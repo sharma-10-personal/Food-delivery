@@ -4,19 +4,29 @@ import { useParams } from "react-router";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
-  useEffect(() => {
-    getMenu();
-  }, {id});
+  console.log(id);
+  useEffect(
+    () => {
+      getMenu();
+    },
+    { id }
+  );
 
   const [menu, setMenu] = useState([]);
   const [resName, setResName] = useState("");
   const [loading, setLoading] = useState(true);
+  const [subheader, setSubHeader] = useState([]);
 
   const getMenu = async () => {
+    let subHeaderDetails = [];
     let menuDetails = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.96340&lng=77.58550&restaurantId=43836&catalog_qa=undefined&submitAction=ENTER"
+      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.96340&lng=77.58550&restaurantId=" +
+        id +
+        "&catalog_qa=undefined&submitAction=ENTER"
     );
     menuDetails = await menuDetails.json();
+
+    setSubHeader(menuDetails?.data?.cards[2]?.card?.card?.info);
 
     setResName(menuDetails?.data?.cards[0].card.card.text);
 
@@ -41,12 +51,21 @@ const RestaurantMenu = () => {
   if (loading) {
     return <Shimmer />;
   }
-  
   return (
-
     <div className="menu-body">
       <h1> {resName}</h1>
-      <div>
+      <div className="menu-subheader">
+        <h3>Outlet : {subheader.areaName}</h3>
+        <h3>
+          {" "}
+          your order will be delivered in {subheader.sla.minDeliveryTime} -
+          {subheader.sla.maxDeliveryTime} mins
+        </h3>
+        <h3>{subheader.costForTwoMessage}</h3>
+        <h3>Ratings : {subheader.avgRating}</h3>
+      </div>
+
+      <div className="menu-all-items">
         {menu.map((items, key) => {
           return (
             <div className="menu-item" key={key}>

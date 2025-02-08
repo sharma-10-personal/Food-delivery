@@ -187,3 +187,21 @@ background-color: black;
     align-items: center;
 
 }
+
+.menu-all-items{
+    padding-top:15px
+}
+
+.menu-subheader{
+    border-bottom: 2px black solid;
+    padding-bottom: 5px;
+    text-align: center;
+  
+}
+
+.restaurant-link{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+
+}
