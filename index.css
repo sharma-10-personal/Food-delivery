@@ -205,3 +205,11 @@ background-color: black;
     display: block;
 
 }
+
+.about-container{
+
+    padding: 5px;
+    border: 2px black solid;
+    margin: 5px;
+
+}
