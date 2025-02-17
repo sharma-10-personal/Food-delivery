@@ -10,7 +10,7 @@ const Header = () => {
       <img className="logoimg" src={logo} />
       <ul className="nav-items">
         <li>
-          <a href="/home">Home</a>
+          <a href="/">Home</a>
         </li>
         <li>
           <Link to="/about">About</Link>
@@ -20,6 +20,9 @@ const Header = () => {
         </li>
         <li>
           <Link to="/cart">Cart</Link>
+        </li>
+        <li>
+          <Link to="/groceries">Groceries</Link>
         </li>
         <button
           className="login-btn"
