@@ -2,11 +2,14 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
+import useOnlineStatus from "../../utils/useOnlineStatus";
 
 const Body = () => {
   const [resDetail, setResDetail] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [filteredRes, setFilteredRes] = useState([]);
+  const internetStatus = useOnlineStatus();
+  console.log(internetStatus);
 
   useEffect(() => {
     getApiData();
@@ -29,9 +32,13 @@ const Body = () => {
         ?.restaurants
     );
   }
+  if (internetStatus === false) {
+    return <h1>Your internet connection is offline </h1>;
+  }
   if (resDetail.length == 0) {
     return <Shimmer />;
   }
+
   return (
     <div className="body-comp">
       <div className="filters">
