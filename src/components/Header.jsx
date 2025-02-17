@@ -10,7 +10,7 @@ const Header = () => {
       <img className="logoimg" src={logo} />
       <ul className="nav-items">
         <li>
-          <a href="/about">Home</a>
+          <a href="/home">Home</a>
         </li>
         <li>
           <Link to="/about">About</Link>
