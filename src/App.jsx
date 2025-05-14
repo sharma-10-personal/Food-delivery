@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 import Contact from "./components/Contact";
 import ErrorPage from "./components/ErrorPage";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Practise from "./components/PractiseClass";
 //import  from "./components/Groceries";
 
 const Groceries = lazy(() => import("./components/Groceries"));
@@ -21,6 +22,7 @@ const Applayout = () => {
     </div>
   );
 };
+
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -43,6 +45,16 @@ const appRouter = createBrowserRouter([
           <Suspense fallback={<h1> this is fallback loading ...</h1>}>
             <Groceries />
           </Suspense>
+        ),
+      },
+      {
+        path: "/practise",
+        element: (
+          <Practise
+            name1="sharma prop test"
+            location="Bangalore"
+            email="2000sharma.ss@gmail.com"
+          />
         ),
       },
       { path: "/restaurant/:id", element: <RestaurantMenu /> },
